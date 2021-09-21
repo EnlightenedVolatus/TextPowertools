@@ -5,8 +5,7 @@
 
 std::string textWrapRaw(
         const std::string &sourceString,
-        int maxWidth)
-{
+        int maxWidth) {
     std::string wrappedString;
     int currentLineLength{ 0 };
     for (char character : sourceString) {
