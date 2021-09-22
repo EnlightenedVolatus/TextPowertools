@@ -6,14 +6,12 @@
 namespace TextPowertools {
     std::string textWrapRaw(
             const std::string &sourceString, int maxWidth,
-            bool hyphenize, bool allowLeadingSpaces) {
+            bool allowLeadingSpaces) {
         std::string wrappedString;
         int currentLineLength{ 0 };
+
         for (char character : sourceString) {
-            if (currentLineLength == maxWidth-static_cast<int>(hyphenize)-1) {
-                if (hyphenize) {
-                    wrappedString += "-";
-                }
+            if (currentLineLength == maxWidth-1) {
                 bool notNewline{ character != '\n' };
                 if (notNewline) {
                     wrappedString += '\n';
@@ -23,9 +21,8 @@ namespace TextPowertools {
                 currentLineLength++;
             }
 
-            if (
-                    !allowLeadingSpaces && currentLineLength == 0
-                    && character == ' ') {
+            if (!allowLeadingSpaces && currentLineLength == 0
+                && character == ' ') {
                 continue;
             }
     
