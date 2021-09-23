@@ -10,10 +10,22 @@ namespace TextPowertools {
     }
     
     
+    std::string alignLeft(
+        std::string str,
+        int maxWidth = TextPowertools::Constants::DEFAULT_MAX_LINE_WIDTH);
+
+    std::string alignCenter(
+        std::string str,
+        int maxWidth = TextPowertools::Constants::DEFAULT_MAX_LINE_WIDTH);
+
+    std::string alignRight(
+        std::string str,
+        int maxWidth = TextPowertools::Constants::DEFAULT_MAX_LINE_WIDTH);
+
     std::string textWrapRaw(
         const std::string &sourceString,
         int maxWidth = TextPowertools::Constants::DEFAULT_MAX_LINE_WIDTH,
-        bool hyphenize = false, bool allowLeadingSpaces = false);
+        bool allowLeadingSpaces = false);
 }
 
 #endif
