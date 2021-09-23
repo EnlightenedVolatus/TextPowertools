@@ -1,5 +1,5 @@
-#ifndef HEADER_FORMATTING
-#define HEADER_FORMATTING
+#ifndef _HEADER_FORMATTING_
+#define _HEADER_FORMATTING_
 
 #include <string>
 
