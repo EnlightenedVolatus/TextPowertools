@@ -5,14 +5,20 @@
 
 
 namespace TextPowertools {
+    using stringSize = std::string::size_type;
+
+
     std::string alignLeft(std::string str, int maxWidth) {
-        str.insert(0, std::max(0, maxWidth - str.length()), ' ');
+        str.insert(str.length(), std::max(static_cast<stringSize>(0),
+            static_cast<stringSize>(maxWidth - str.length())), ' ');
         return str;
     }
 
 
     std::string alignCenter(std::string str, int maxWidth) {
-        int paddingAmount{ std::max(0, (maxWidth - str.length()) / 2) };
+        stringSize paddingAmount{
+            std::max(static_cast<stringSize>(0),
+            (static_cast<stringSize>(maxWidth) - str.length()) / 2) };
         str.insert(0, paddingAmount, ' ');
         str.insert(str.length(), paddingAmount, ' ');
         return str;
@@ -20,7 +26,9 @@ namespace TextPowertools {
 
 
     std::string alignRight(std::string str, int maxWidth) {
-        str.insert(str.length(), std::max(0, maxWidth - str.length()), ' ');
+        str.insert(
+            0, std::max(static_cast<stringSize>(0),
+            static_cast<stringSize>(maxWidth) - str.length()), ' ');
         return str;
     }
 
