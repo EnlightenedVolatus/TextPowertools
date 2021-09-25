@@ -3,38 +3,40 @@
 #include <string>
 #include <algorithm>
 
+#include "base.hpp"
+
 
 namespace TextPowertools {
     using stringSize = std::string::size_type;
 
 
-    std::string alignLeft(std::string str, int maxWidth) {
+    std::string alignLeft(std::string str, TextPowertools::Config &config) {
         str.insert(str.length(), std::max(static_cast<stringSize>(0),
-            static_cast<stringSize>(maxWidth - str.length())), ' ');
+            static_cast<stringSize>(config.maxWidth - str.length())), ' ');
         return str;
     }
 
 
-    std::string alignCenter(std::string str, int maxWidth) {
+    std::string alignCenter(std::string str, TextPowertools::Config &config) {
         stringSize paddingAmount{
             std::max(static_cast<stringSize>(0),
-            (static_cast<stringSize>(maxWidth) - str.length()) / 2) };
+            (static_cast<stringSize>(config.maxWidth) - str.length()) / 2) };
         str.insert(0, paddingAmount, ' ');
         str.insert(str.length(), paddingAmount, ' ');
         return str;
     }
 
 
-    std::string alignRight(std::string str, int maxWidth) {
+    std::string alignRight(std::string str, TextPowertools::Config &config) {
         str.insert(
             0, std::max(static_cast<stringSize>(0),
-            static_cast<stringSize>(maxWidth) - str.length()), ' ');
+            static_cast<stringSize>(config.maxWidth) - str.length()), ' ');
         return str;
     }
 
 
     std::string textWrapRaw(
-            const std::string &sourceString, int maxWidth,
+            const std::string &sourceString, TextPowertools::Config &config,
             bool allowLeadingSpaces) {
         std::string wrappedString;
         int currentLineLength{ 0 };
@@ -50,7 +52,7 @@ namespace TextPowertools {
                 continue;
             }
 
-            if (currentLineLength == maxWidth) {
+            if (currentLineLength == config.maxWidth) {
                 if (character == ' ') {
                     continue;
                 }

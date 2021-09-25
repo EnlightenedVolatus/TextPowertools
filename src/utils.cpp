@@ -19,7 +19,7 @@ namespace TextPowertools {
 
 
     bool isAlphanumeric(char character) {
-        return std::islanum(static_cast<unsigned char>(character));
+        return std::isalnum(static_cast<unsigned char>(character));
     }
 
 
@@ -44,6 +44,10 @@ namespace TextPowertools {
             if (!TextPowertools::isGraphical(character)) {
                 return false;
             }
+        }
+
+        return true;
+    }
 
 
     bool isNumber(const std::string &sourceString) {

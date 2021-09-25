@@ -3,11 +3,12 @@
 
 #include <string>
 
+#include "base.hpp"
+
 
 namespace TextPowertools {
     std::string generateRuler(
-        int width = TextPowertools::Constants::DEFAULT_MAX_LINE_WIDTH,
-        char rulerCharacter = '-');
+        TextPowertools::Config &config, char rulerCharacter = '-');
 }
 
 #endif

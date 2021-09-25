@@ -3,25 +3,25 @@
 
 #include <string>
 
-#include "constants.hpp"
+#include "base.hpp"
 
 
 namespace TextPowertools {
     std::string alignLeft(
         std::string str,
-        int maxWidth = TextPowertools::Constants::DEFAULT_MAX_LINE_WIDTH);
+        TextPowertools::Config &config);
 
     std::string alignCenter(
         std::string str,
-        int maxWidth = TextPowertools::Constants::DEFAULT_MAX_LINE_WIDTH);
+        TextPowertools::Config &config);
 
     std::string alignRight(
         std::string str,
-        int maxWidth = TextPowertools::Constants::DEFAULT_MAX_LINE_WIDTH);
+        TextPowertools::Config &config);
 
     std::string textWrapRaw(
         const std::string &sourceString,
-        int maxWidth = TextPowertools::Constants::DEFAULT_MAX_LINE_WIDTH,
+        TextPowertools::Config &config,
         bool allowLeadingSpaces = false);
 }
 
