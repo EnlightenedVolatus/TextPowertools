@@ -4,10 +4,9 @@
 
 
 namespace TextPowertools {
-    std::string generateRuler(
-            TextPowertools::Config &config, char rulerCharacter) {
+    std::string generateRuler(int width, char rulerCharacter) {
         std::string ruler;
-        ruler.insert(0, config.maxWidth, rulerCharacter);
+        ruler.insert(0, width, rulerCharacter);
         return ruler;
     }
 }

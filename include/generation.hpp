@@ -7,8 +7,7 @@
 
 
 namespace TextPowertools {
-    std::string generateRuler(
-        TextPowertools::Config &config, char rulerCharacter = '-');
+    std::string generateRuler(int width, char rulerCharacter = '-');
 }
 
 #endif
