@@ -40,22 +40,27 @@ namespace TextPowertools {
         int currentLineLength{ 0 };
 
         for (char character : sourceString) {
-            if (currentLineLength == maxWidth-1) {
-                bool notNewline{ character != '\n' };
-                if (notNewline) {
-                    wrappedString += '\n';
-                }
+            if (character == '\n') {
+                wrappedString += '\n';
                 currentLineLength = 0;
-            } else {
-                currentLineLength++;
-            }
-
-            if (!allowLeadingSpaces && currentLineLength == 0
-                && character == ' ') {
                 continue;
             }
-    
+
+            if (currentLineLength == 0 && character == ' ') {
+                continue;
+            }
+
+            if (currentLineLength == maxWidth) {
+                if (character == ' ') {
+                    continue;
+                }
+
+                wrappedString += '\n';
+                currentLineLength = 0;
+            }
+
             wrappedString += character;
+            currentLineLength++;
         }
     
         return wrappedString;

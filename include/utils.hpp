@@ -1,5 +1,5 @@
-#ifndef _HEADER_UTILS_
-#define _HEADER_UTILS_
+#ifndef _HEADER_TEXTPOWERTOOLS_UTILS_
+#define _HEADER_TEXTPOWERTOOLS_UTILS_
 
 #include <string>
 
