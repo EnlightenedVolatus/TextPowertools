@@ -3,7 +3,7 @@
 
 
 namespace TextPowertools {
-    bool isAlpha(char character) {
+    bool isAlphabetic(char character) {
         return std::isalpha(static_cast<unsigned char>(character));
     }
 
@@ -13,15 +13,37 @@ namespace TextPowertools {
     }
 
 
+    bool isPunctuation(char character) {
+        return std::ispunct(static_cast<unsigned char>(character));
+    }
+
+
+    bool isAlphanumeric(char character) {
+        return std::islanum(static_cast<unsigned char>(character));
+    }
+
+
+    bool isGraphical(char character) {
+        return std::isgraph(static_cast<unsigned char>(character));
+    }
+
+
     bool isWord(const std::string &sourceString) {
         for (char character : sourceString) {
-            if (!TextPowertools::isAlpha(character)) {
+            if (!TextPowertools::isAlphabetic(character)) {
                 return false;
             }
         }
 
         return true;
     }
+
+
+    bool isExtendedWord(const std::string &sourceString) {
+        for (char character : sourceString) {
+            if (!TextPowertools::isGraphical(character)) {
+                return false;
+            }
 
 
     bool isNumber(const std::string &sourceString) {

@@ -5,9 +5,15 @@
 
 
 namespace TextPowertools {
-    bool isAlpha(char character);
+    bool isAlphabetic(char character);
     
     bool isDigit(char character);
+
+    bool isPunctuation(char character);
+
+    bool isAlphanumeric(char character);
+
+    bool isGraphical(char character);
 
     bool isWord(const std::string &sourceString);
 
