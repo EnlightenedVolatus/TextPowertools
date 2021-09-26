@@ -17,6 +17,8 @@ namespace TextPowertools {
 
     bool isWord(const std::string &sourceString);
 
+    bool isWordExtended(const std::string &sourceString);
+
     bool isNumber(const std::string &sourceString);
 }
 

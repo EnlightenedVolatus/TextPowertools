@@ -30,7 +30,7 @@ namespace TextPowertools {
 
     bool isWord(const std::string &sourceString) {
         for (char character : sourceString) {
-            if (!TextPowertools::isAlphabetic(character)) {
+            if (!isAlphabetic(character)) {
                 return false;
             }
         }
@@ -39,9 +39,9 @@ namespace TextPowertools {
     }
 
 
-    bool isExtendedWord(const std::string &sourceString) {
+    bool isWordExtended(const std::string &sourceString) {
         for (char character : sourceString) {
-            if (!TextPowertools::isGraphical(character)) {
+            if (!isGraphical(character)) {
                 return false;
             }
         }
@@ -52,7 +52,7 @@ namespace TextPowertools {
 
     bool isNumber(const std::string &sourceString) {
         for (char character : sourceString) {
-            if (!TextPowertools::isDigit(character)) {
+            if (!isDigit(character)) {
                 return false;
             }
         }

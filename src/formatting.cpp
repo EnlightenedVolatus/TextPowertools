@@ -10,55 +10,119 @@ namespace TextPowertools {
     using stringSize = std::string::size_type;
 
 
-    std::string alignLeft(std::string str, TextPowertools::Config &config) {
-        str.insert(str.length(), std::max(static_cast<stringSize>(0),
-            static_cast<stringSize>(config.maxWidth - str.length())), ' ');
+    std::string alignLeftLine(std::string str, int lineWidth) {
+        if (lineWidth > str.length()) {
+            str.insert(str.length(), lineWidth - str.length(), ' ');
+        }
+        
         return str;
     }
 
 
-    std::string alignCenter(std::string str, TextPowertools::Config &config) {
-        stringSize paddingAmount{
-            std::max(static_cast<stringSize>(0),
-            (static_cast<stringSize>(config.maxWidth) - str.length()) / 2) };
-        str.insert(0, paddingAmount, ' ');
-        str.insert(str.length(), paddingAmount, ' ');
+    std::string alignLeftLine(std::string str, const Config &config) {
+        if (config.lineWidth > str.length()) {
+            str.insert(str.length(), config.lineWidth - str.length(), ' ');
+        }
+
         return str;
     }
 
 
-    std::string alignRight(std::string str, TextPowertools::Config &config) {
-        str.insert(
-            0, std::max(static_cast<stringSize>(0),
-            static_cast<stringSize>(config.maxWidth) - str.length()), ' ');
+    std::string alignCenterLine(std::string str, int lineWidth) {
+        if (lineWidth > str.length()) {
+            stringSize paddingAmount{ (lineWidth - str.length()) / 2 };
+            str.insert(0, paddingAmount, ' ');
+            str.insert(str.length(), paddingAmount, ' ');
+        }
+
+        return str;
+    }
+
+
+    std::string alignCenterLine(std::string str, const Config &config) {
+        if (config.lineWidth > str.length()) {
+            stringSize paddingAmount{ (config.lineWidth - str.length()) / 2 };
+            str.insert(0, paddingAmount, ' ');
+            str.insert(str.length(), paddingAmount, ' ');
+        }
+
+        return str;
+    }
+
+
+    std::string alignRightLine(std::string str, int lineWidth) {
+        if (lineWidth > str.length()) {
+            str.insert(0, lineWidth - str.length(), ' ');
+        }
+
+        return str;
+    }
+
+
+    std::string alignRightLine(std::string str, const Config &config) {
+        if (config.lineWidth > str.length()) {
+            str.insert(0, config.lineWidth - str.length(), ' ');
+        }
+
         return str;
     }
 
 
     std::string textWrapRaw(
-            const std::string &sourceString, TextPowertools::Config &config,
+            const std::string &sourceString, int lineWidth,
             bool allowLeadingSpaces) {
         std::string wrappedString;
         int currentLineLength{ 0 };
 
         for (char character : sourceString) {
-            if (character == '\n') {
-                wrappedString += '\n';
-                currentLineLength = 0;
+            if (!allowLeadingSpaces && currentLineLength == 0
+                    && character == ' ') {
                 continue;
             }
 
-            if (currentLineLength == 0 && character == ' ') {
-                continue;
-            }
-
-            if (currentLineLength == config.maxWidth) {
+            if (currentLineLength == lineWidth) {
                 if (character == ' ') {
                     continue;
                 }
 
                 wrappedString += '\n';
                 currentLineLength = 0;
+
+                if (character == '\n') {
+                    continue;
+                }
+            }
+
+            wrappedString += character;
+            currentLineLength++;
+        }
+    
+        return wrappedString;
+    }
+
+
+    std::string textWrapRaw(
+            const std::string &sourceString, const Config &config) {
+        std::string wrappedString;
+        int currentLineLength{ 0 };
+
+        for (char character : sourceString) {
+            if (!config.allowLeadingSpaces && currentLineLength == 0
+                    && character == ' ') {
+                continue;
+            }
+
+            if (currentLineLength == config.lineWidth) {
+                if (character == ' ') {
+                    continue;
+                }
+
+                wrappedString += '\n';
+                currentLineLength = 0;
+
+                if (character == '\n') {
+                    continue;
+                }
             }
 
             wrappedString += character;
