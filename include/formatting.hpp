@@ -8,6 +8,13 @@
 
 
 namespace TextPowertools {
+    std::string tagString(
+        const std::string &str, const std::string &tag,
+        char tagOpenChar, char tagCloseChar);
+    std::string tagString(
+        const std::string &str, const std::string&tag, const Config &config);
+
+
     std::string alignLeftLine(
         std::string str, int lineWidth = Constants::LINE_WIDTH);
     std::string alignLeftLine(std::string str, const Config &config);

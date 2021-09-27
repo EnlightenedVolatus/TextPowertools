@@ -6,10 +6,12 @@
 
 namespace TextPowertools {
     struct Config {
-        int lineWidth{ TextPowertools::Constants::LINE_WIDTH };
+        int lineWidth{ Constants::LINE_WIDTH };
         bool allowLeadingSpaces{
-            TextPowertools::Constants::ALLOW_LEADING_SPACES };
-        char rulerCharacter{ TextPowertools::Constants::RULER_CHARACTER };
+            Constants::ALLOW_LEADING_SPACES };
+        char rulerCharacter{ Constants::RULER_CHARACTER };
+        char tagOpenChar{ Constants::TAG_OPEN_CHAR };
+        char tagCloseChar{ Constants::TAG_CLOSE_CHAR };
     };
 }
 

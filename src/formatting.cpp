@@ -10,6 +10,20 @@ namespace TextPowertools {
     using stringSize = std::string::size_type;
 
 
+    std::string tagString(
+            const std::string &str, const std::string &tag,
+            char tagOpenChar, char tagCloseChar) {
+        return tagOpenChar + tag + tagCloseChar + ' ' + str;
+    }
+
+
+    std::string tagString(
+            const std::string &str, const std::string &tag,
+            const Config &config) {
+        return config.tagOpenChar + tag + config.tagCloseChar + ' ' + str;
+    }
+
+
     std::string alignLeftLine(std::string str, int lineWidth) {
         if (lineWidth > str.length()) {
             str.insert(str.length(), lineWidth - str.length(), ' ');
