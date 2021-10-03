@@ -1,3 +1,5 @@
+#include "generation.hpp"
+
 #include <string>
 
 #include "base.hpp"
