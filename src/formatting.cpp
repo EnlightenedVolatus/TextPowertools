@@ -11,14 +11,14 @@ namespace TextPowertools {
 
 
     std::string tagString(
-            const std::string &str, const std::string &tag,
+            const std::string &tag, const std::string &str,
             char tagOpenChar, char tagCloseChar) {
         return tagOpenChar + tag + tagCloseChar + ' ' + str;
     }
 
 
     std::string tagString(
-            const std::string &str, const std::string &tag,
+            const std::string &tag, const std::string &str,
             const Config &config) {
         return config.tagOpenChar + tag + config.tagCloseChar + ' ' + str;
     }
