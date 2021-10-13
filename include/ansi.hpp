@@ -7,13 +7,22 @@
 namespace TextPowertools {
     enum ANSI_COLOR {
         BLACK = 30,
-        RED = 31,
-        GREEN = 32,
-        YELLOW = 33,
-        BLUE = 34,
-        MAGENTA = 35,
-        CYAN = 36,
-        WHITE = 37
+        RED,
+        GREEN,
+        YELLOW,
+        BLUE,
+        MAGENTA,
+        CYAN,
+        WHITE,
+
+        BRIGHT_BLACK = 90,
+        BRIGHT_RED,
+        BRIGHT_GREEN,
+        BRIGHT_YELLOW,
+        BRIGHT_BLUE,
+        BRIGHT_MAGENTA,
+        BRIGHT_CYAN,
+        BRIGHT_WHITE,
     };
 
 
