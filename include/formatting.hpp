@@ -33,7 +33,8 @@ namespace TextPowertools {
 
     std::string textWrapRaw(
         const std::string &sourceString, int lineWidth = Constants::LINE_WIDTH,
-        bool allowLeadingSpaces = Constants::ALLOW_LEADING_SPACES);
+        bool allowLeadingSpaces = Constants::ALLOW_LEADING_SPACES,
+        bool allowTrailingSpaces = Constants::ALLOW_TRAILING_SPACES);
     std::string textWrapRaw(
         const std::string &sourceString, const Config &config);
 }

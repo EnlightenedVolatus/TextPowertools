@@ -84,10 +84,10 @@ namespace TextPowertools {
 
     std::string textWrapRaw(
             const std::string &sourceString, int lineWidth,
-            bool allowLeadingSpaces) {
+            bool allowLeadingSpaces, bool allowTrailingSpaces) {
         std::string wrappedString;
-        int currentLineLength{ 0 };
 
+        int currentLineLength{ 0 };
         for (char character : sourceString) {
             if (!allowLeadingSpaces && currentLineLength == 0
                     && character == ' ') {
@@ -95,7 +95,7 @@ namespace TextPowertools {
             }
 
             if (currentLineLength == lineWidth) {
-                if (character == ' ') {
+                if (!allowTrailingSpaces && character == ' ') {
                     continue;
                 }
 
@@ -127,7 +127,7 @@ namespace TextPowertools {
             }
 
             if (currentLineLength == config.lineWidth) {
-                if (character == ' ') {
+                if (!config.allowTrailingSpaces && character == ' ') {
                     continue;
                 }
 
