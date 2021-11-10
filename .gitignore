@@ -1,5 +1,3 @@
-poshtools/
-test/
-src/main.cpp
 compile_flags.txt
 Makefile
+debug-binaries
