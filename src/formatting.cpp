@@ -82,23 +82,25 @@ namespace TextPowertools {
     }
 
 
-    std::string textWrapRaw(
+    std::string textWrapChars(
             const std::string &sourceString, int lineWidth,
             bool allowLeadingSpaces, bool allowTrailingSpaces) {
         std::string wrappedString;
 
         int currentLineLength{ 0 };
         for (char character : sourceString) {
-            if (!allowLeadingSpaces && currentLineLength == 0
-                    && character == ' ') {
-                continue;
+            if (character == ' ') {
+                if (currentLineLength == 0) {
+                    if (!allowLeadingSpaces) {
+                        continue;
+                    }
+                } else if (currentLineLength == lineWidth - 1
+                        && !allowTrailingSpaces) {
+                    continue;
+                }
             }
 
             if (currentLineLength == lineWidth) {
-                if (!allowTrailingSpaces && character == ' ') {
-                    continue;
-                }
-
                 wrappedString += '\n';
                 currentLineLength = 0;
 
@@ -115,22 +117,24 @@ namespace TextPowertools {
     }
 
 
-    std::string textWrapRaw(
+    std::string textWrapChars(
             const std::string &sourceString, const Config &config) {
         std::string wrappedString;
         int currentLineLength{ 0 };
 
         for (char character : sourceString) {
-            if (!config.allowLeadingSpaces && currentLineLength == 0
-                    && character == ' ') {
-                continue;
+            if (character == ' ') {
+                if (currentLineLength == 0) {
+                    if (!config.allowLeadingSpaces) {
+                        continue;
+                    }
+                } else if (currentLineLength == config.lineWidth - 1
+                        && !config.allowTrailingSpaces) {
+                    continue;
+                }
             }
 
             if (currentLineLength == config.lineWidth) {
-                if (!config.allowTrailingSpaces && character == ' ') {
-                    continue;
-                }
-
                 wrappedString += '\n';
                 currentLineLength = 0;
 

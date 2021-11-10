@@ -31,11 +31,11 @@ namespace TextPowertools {
     std::string alignRightLine(std::string str, const Config &config);
 
 
-    std::string textWrapRaw(
+    std::string textWrapChars(
         const std::string &sourceString, int lineWidth = Constants::LINE_WIDTH,
         bool allowLeadingSpaces = Constants::ALLOW_LEADING_SPACES,
         bool allowTrailingSpaces = Constants::ALLOW_TRAILING_SPACES);
-    std::string textWrapRaw(
+    std::string textWrapChars(
         const std::string &sourceString, const Config &config);
 }
 
