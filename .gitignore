@@ -1,4 +1,5 @@
 compile_flags.txt
 Makefile
-debug-source/
-debug-binaries/
+debug-src/
+debug-include/
+debug-bin/
