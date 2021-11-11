@@ -16,11 +16,10 @@ namespace TextPowertools {
         return tagOpenChar + tag + tagCloseChar + ' ' + str;
     }
 
-
     std::string tagString(
             const std::string &tag, const std::string &str,
             const Config &config) {
-        return config.tagOpenChar + tag + config.tagCloseChar + ' ' + str;
+        return tagString(tag, str, config.tagOpenChar, config.tagCloseChar);
     }
 
 
@@ -32,13 +31,8 @@ namespace TextPowertools {
         return str;
     }
 
-
-    std::string alignLeftLine(std::string str, const Config &config) {
-        if (config.lineWidth > str.length()) {
-            str.insert(str.length(), config.lineWidth - str.length(), ' ');
-        }
-
-        return str;
+    std::string alignLeftLine(const std::string &str, const Config &config) {
+        return alignLeftLine(str, config.lineWidth);
     }
 
 
@@ -52,15 +46,8 @@ namespace TextPowertools {
         return str;
     }
 
-
-    std::string alignCenterLine(std::string str, const Config &config) {
-        if (config.lineWidth > str.length()) {
-            stringSize paddingAmount{ (config.lineWidth - str.length()) / 2 };
-            str.insert(0, paddingAmount, ' ');
-            str.insert(str.length(), paddingAmount, ' ');
-        }
-
-        return str;
+    std::string alignCenterLine(const std::string &str, const Config &config) {
+        return alignCenterLine(str, config.lineWidth);
     }
 
 
@@ -72,13 +59,8 @@ namespace TextPowertools {
         return str;
     }
 
-
-    std::string alignRightLine(std::string str, const Config &config) {
-        if (config.lineWidth > str.length()) {
-            str.insert(0, config.lineWidth - str.length(), ' ');
-        }
-
-        return str;
+    std::string alignRightLine(const std::string &str, const Config &config) {
+        return alignRightLine(str, config.lineWidth);
     }
 
 
@@ -116,38 +98,11 @@ namespace TextPowertools {
         return wrappedString;
     }
 
-
     std::string textWrapChars(
             const std::string &sourceString, const Config &config) {
-        std::string wrappedString;
-        int currentLineLength{ 0 };
-
-        for (char character : sourceString) {
-            if (character == ' ') {
-                if (currentLineLength == 0) {
-                    if (!config.allowLeadingSpaces) {
-                        continue;
-                    }
-                } else if (currentLineLength == config.lineWidth - 1
-                        && !config.allowTrailingSpaces) {
-                    continue;
-                }
-            }
-
-            if (currentLineLength == config.lineWidth) {
-                wrappedString += '\n';
-                currentLineLength = 0;
-
-                if (character == '\n') {
-                    continue;
-                }
-            }
-
-            wrappedString += character;
-            currentLineLength++;
-        }
-    
-        return wrappedString;
+        return textWrapChars(
+            sourceString, config.lineWidth,
+            config.allowLeadingSpaces, config.allowTrailingSpaces);
     }
 }
 

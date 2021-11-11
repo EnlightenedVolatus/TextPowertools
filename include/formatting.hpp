@@ -13,22 +13,22 @@ namespace TextPowertools {
         char tagOpenChar = Constants::TAG_OPEN_CHAR,
         char tagCloseChar = Constants::TAG_CLOSE_CHAR);
     std::string tagString(
-        const std::string& tag, const std::string &str, const Config &config);
+        const std::string &tag, const std::string &str, const Config &config);
 
 
     std::string alignLeftLine(
         std::string str, int lineWidth = Constants::LINE_WIDTH);
-    std::string alignLeftLine(std::string str, const Config &config);
+    std::string alignLeftLine(const std::string &str, const Config &config);
 
 
     std::string alignCenterLine(
         std::string str, int lineWidth = Constants::LINE_WIDTH);
-    std::string alignCenterLine(std::string str, const Config &config);
+    std::string alignCenterLine(const std::string &str, const Config &config);
 
 
     std::string alignRightLine(
         std::string str, int lineWidth = Constants::LINE_WIDTH);
-    std::string alignRightLine(std::string str, const Config &config);
+    std::string alignRightLine(const std::string &str, const Config &config);
 
 
     std::string textWrapChars(
