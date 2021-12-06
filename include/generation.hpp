@@ -8,10 +8,13 @@
 
 
 namespace TextPowertools {
-    std::string generateRuler(
-        int width = Constants::LINE_WIDTH,
-        char rulerCharacter = Constants::RULER_CHARACTER);
-    std::string generateRuler(const Config &config);
-}
+
+std::string generateRuler(
+    int width = Constants::LINE_WIDTH,
+    char rulerCharacter = Constants::RULER_CHARACTER);
+
+std::string generateRuler(const Config &config);
+
+}  // namespace TextPowertools
 
 #endif
