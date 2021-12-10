@@ -20,9 +20,7 @@ tagString(
 }
 
 std::string 
-tagString(
-    const std::string &tag, const std::string &str,
-    const Config &config)
+tagString(const std::string &tag, const std::string &str, const Config &config)
 {
     return tagString(tag, str, config.tagOpenChar, config.tagCloseChar);
 }
@@ -118,8 +116,7 @@ textWrapChars(
 }
 
 std::string 
-textWrapChars(
-    const std::string &sourceString, const Config &config)
+textWrapChars(const std::string &sourceString, const Config &config)
 {
     return textWrapChars(
         sourceString, config.lineWidth,
