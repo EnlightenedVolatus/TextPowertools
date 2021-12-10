@@ -1,10 +1,11 @@
-#include "utils.hpp"
+#include "textpowertools/utils.hpp"
 
 #include <string>
 #include <cctype>
 
 
 namespace TextPowertools {
+
 
 bool 
 isAlphabetic(char character)
@@ -78,5 +79,6 @@ isNumber(const std::string &sourceString)
 
     return true;
 }
+
 
 }  // namespace TextPowertools

@@ -1,13 +1,14 @@
-#ifndef _HEADER_TEXTPOWERTOOLS_FORMATTING_
-#define _HEADER_TEXTPOWERTOOLS_FORMATTING_
+#ifndef HEADER_TEXTPOWERTOOLS_FORMATTING
+#define HEADER_TEXTPOWERTOOLS_FORMATTING
 
 #include <string>
 
-#include "constants.hpp"
-#include "base.hpp"
+#include "textpowertools/constants.hpp"
+#include "textpowertools/base.hpp"
 
 
 namespace TextPowertools {
+
 
 std::string 
 tagString(
@@ -49,6 +50,7 @@ textWrapChars(
 
 std::string 
 textWrapChars(const std::string &sourceString, const Config &config);
+
 
 }  // namespace TextPowertools
 

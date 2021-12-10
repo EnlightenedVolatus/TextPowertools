@@ -1,11 +1,12 @@
-#include "generation.hpp"
+#include "textpowertools/generation.hpp"
 
 #include <string>
 
-#include "base.hpp"
+#include "textpowertools/base.hpp"
 
 
 namespace TextPowertools {
+
 
 std::string 
 generateRuler(int width, char rulerCharacter)
@@ -23,5 +24,6 @@ generateRuler(const Config &config)
     ruler.insert(0, config.lineWidth, config.rulerCharacter);
     return ruler;
 }
+
 
 }  // namespace TextPowertools

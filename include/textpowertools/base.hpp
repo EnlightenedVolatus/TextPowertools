@@ -1,10 +1,11 @@
-#ifndef _HEADER_TEXTPOWERTOOLS_BASE_
-#define _HEADER_TEXTPOWERTOOLS_BASE_
+#ifndef HEADER_TEXTPOWERTOOLS_BASE
+#define HEADER_TEXTPOWERTOOLS_BASE
 
-#include "constants.hpp"
+#include "textpowertools/constants.hpp"
 
 
 namespace TextPowertools {
+
 
 struct Config {
     int lineWidth{ Constants::LINE_WIDTH };
@@ -14,6 +15,7 @@ struct Config {
     char tagOpenChar{ Constants::TAG_OPEN_CHAR };
     char tagCloseChar{ Constants::TAG_CLOSE_CHAR };
 };
+
 
 }  // namespace TextPowertools
 

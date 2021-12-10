@@ -1,10 +1,11 @@
-#ifndef _HEADER_TEXTPOWERTOOLS_ANSI_
-#define _HEADER_TEXTPOWERTOOLS_ANSI_
+#ifndef HEADER_TEXTPOWERTOOLS_ANSI
+#define HEADER_TEXTPOWERTOOLS_ANSI
 
 #include <iostream>
 
 
 namespace TextPowertools {
+
 
 enum ANSI_COLOR
 {
@@ -243,6 +244,7 @@ ansiReset()
 {
     std::cout << "\x1b[0m";
 }
+
 
 }  // namespace TextPowertools
 

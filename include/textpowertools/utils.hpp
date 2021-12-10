@@ -1,10 +1,11 @@
-#ifndef _HEADER_TEXTPOWERTOOLS_UTILS_
-#define _HEADER_TEXTPOWERTOOLS_UTILS_
+#ifndef HEADER_TEXTPOWERTOOLS_UTILS
+#define HEADER_TEXTPOWERTOOLS_UTILS
 
 #include <string>
 
 
 namespace TextPowertools {
+
 
 bool
 isAlphabetic(char character);
@@ -30,6 +31,7 @@ isWordExtended(const std::string &sourceString);
 bool
 isNumber(const std::string &sourceString);
 
-}
+
+}  // namespace TextPowertools
 
 #endif

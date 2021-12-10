@@ -1,12 +1,13 @@
-#include "formatting.hpp"
+#include "textpowertools/formatting.hpp"
 
 #include <string>
 #include <algorithm>
 
-#include "base.hpp"
+#include "textpowertools/base.hpp"
 
 
 namespace TextPowertools {
+
 
 using stringSize = std::string::size_type;
 
@@ -122,6 +123,7 @@ textWrapChars(const std::string &sourceString, const Config &config)
         sourceString, config.lineWidth,
         config.allowLeadingSpaces, config.allowTrailingSpaces);
 }
+
 
 }  // namespace TextPowertools
 
