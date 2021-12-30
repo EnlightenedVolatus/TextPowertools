@@ -15,8 +15,8 @@ using stringSize = std::string::size_type;
 std::string 
 tagString(
     const std::string &tag, const std::string &str,
-    char tagOpenChar, char tagCloseChar)
-{
+    char tagOpenChar, char tagCloseChar
+) {
     return tagOpenChar + tag + tagCloseChar + ' ' + str;
 }
 
@@ -87,8 +87,8 @@ alignRightLine(const std::string &str, const Config &config)
 std::string 
 textWrapChars(
     const std::string &sourceString, int lineWidth,
-    bool allowLeadingSpaces, bool allowTrailingSpaces)
-{
+    bool allowLeadingSpaces, bool allowTrailingSpaces
+) {
     std::string wrappedString;
 
     int currentLineLength{ 0 };
