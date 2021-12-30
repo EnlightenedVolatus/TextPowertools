@@ -20,6 +20,7 @@ tagString(
     return tagOpenChar + tag + tagCloseChar + ' ' + str;
 }
 
+
 std::string 
 tagString(const std::string &tag, const std::string &str, const Config &config)
 {
@@ -36,6 +37,7 @@ alignLeftLine(std::string str, int lineWidth)
     
     return str;
 }
+
 
 std::string 
 alignLeftLine(const std::string &str, const Config &config)
@@ -56,6 +58,7 @@ alignCenterLine(std::string str, int lineWidth)
     return str;
 }
 
+
 std::string 
 alignCenterLine(const std::string &str, const Config &config)
 {
@@ -72,6 +75,7 @@ alignRightLine(std::string str, int lineWidth)
 
     return str;
 }
+
 
 std::string 
 alignRightLine(const std::string &str, const Config &config)
@@ -115,6 +119,7 @@ textWrapChars(
 
     return wrappedString;
 }
+
 
 std::string 
 textWrapChars(const std::string &sourceString, const Config &config)
