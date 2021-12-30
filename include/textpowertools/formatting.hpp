@@ -3,7 +3,6 @@
 
 #include <string>
 
-#include "textpowertools/constants.hpp"
 #include "textpowertools/base.hpp"
 
 
