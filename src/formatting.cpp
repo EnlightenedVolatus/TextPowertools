@@ -1,9 +1,9 @@
-#include "textpowertools/formatting.hpp"
+#include "formatting.hpp"
 
 #include <string>
 #include <algorithm>
 
-#include "textpowertools/base.hpp"
+#include "base.hpp"
 
 
 namespace TextPowertools {
