@@ -94,14 +94,10 @@ textWrapChars(
     int currentLineLength{ 0 };
     for (char character : sourceString) {
         if (character == ' ') {
-            if (currentLineLength == 0) {
-                if (!allowLeadingSpaces) {
-                    continue;
-                }
-            } else if (currentLineLength == lineWidth - 1
-                    && !allowTrailingSpaces) {
-                continue;
-            }
+            if (currentLineLength == 0 && !allowLeadingSpaces) continue;
+            else if (
+                    currentLineLength == lineWidth - 1
+                    && !allowTrailingSpaces) continue;
         }
 
         if (currentLineLength == lineWidth) {
