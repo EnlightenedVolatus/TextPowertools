@@ -17,13 +17,4 @@ generateRuler(int width, char rulerCharacter)
 }
 
 
-std::string 
-generateRuler(const Config &config)
-{
-    std::string ruler;
-    ruler.insert(0, config.lineWidth, config.rulerCharacter);
-    return ruler;
-}
-
-
 }  // namespace TextPowertools

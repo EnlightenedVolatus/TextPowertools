@@ -17,20 +17,10 @@ std::string tagString(
 );
 
 
-std::string tagString(
-    const std::string &tag,
-    const std::string &str,
-    const Config &config
-);
-
-
 std::string alignLeftLine(
     std::string str,
     int lineWidth = Constants::LINE_WIDTH
 );
-
-
-std::string alignLeftLine(const std::string &str, const Config &config);
 
 
 std::string alignCenterLine(
@@ -39,16 +29,10 @@ std::string alignCenterLine(
 );
 
 
-std::string alignCenterLine(const std::string &str, const Config &config);
-
-
 std::string alignRightLine(
     std::string str,
     int lineWidth = Constants::LINE_WIDTH
 );
-
-
-std::string alignRightLine(const std::string &str, const Config &config);
 
 
 std::string textWrapChars(
@@ -59,10 +43,41 @@ std::string textWrapChars(
 );
 
 
-std::string textWrapChars(
-    const std::string &sourceString,
-    const Config &config
-);
+inline std::string 
+tagString(const std::string &tag, const std::string &str, const Config &config)
+{
+    return tagString(tag, str, config.tagOpenChar, config.tagCloseChar);
+}
+
+
+inline std::string 
+alignLeftLine(const std::string &str, const Config &config)
+{
+    return alignLeftLine(str, config.lineWidth);
+}
+
+
+inline std::string 
+alignCenterLine(const std::string &str, const Config &config)
+{
+    return alignCenterLine(str, config.lineWidth);
+}
+
+
+inline std::string 
+alignRightLine(const std::string &str, const Config &config)
+{
+    return alignRightLine(str, config.lineWidth);
+}
+
+
+inline std::string 
+textWrapChars(const std::string &sourceString, const Config &config)
+{
+    return textWrapChars(
+        sourceString, config.lineWidth,
+        config.allowLeadingSpaces, config.allowTrailingSpaces);
+}
 
 
 }  // namespace TextPowertools

@@ -15,7 +15,11 @@ std::string generateRuler(
 );
 
 
-std::string generateRuler(const Config &config);
+inline std::string
+generateRuler(const Config &config)
+{
+    return generateRuler(config.lineWidth, config.rulerCharacter);
+}
 
 
 }  // namespace TextPowertools
