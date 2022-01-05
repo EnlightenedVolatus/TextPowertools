@@ -9,14 +9,6 @@
 namespace TextPowertools {
 
 
-std::string tagString(
-    const std::string &tag,
-    const std::string &str, 
-    char tagOpenChar = Constants::TAG_OPEN_CHAR,
-    char tagCloseChar = Constants::TAG_CLOSE_CHAR
-);
-
-
 std::string alignLeftLine(
     std::string str,
     int lineWidth = Constants::LINE_WIDTH
@@ -36,11 +28,29 @@ std::string alignRightLine(
 
 
 std::string textWrapChars(
-    const std::string &sourceString,
+    const std::string &sourceStr,
     int lineWidth = Constants::LINE_WIDTH,
     bool allowLeadingSpaces = Constants::ALLOW_LEADING_SPACES,
     bool allowTrailingSpaces = Constants::ALLOW_TRAILING_SPACES
 );
+
+
+std::string
+textWrap(
+    const std::string &sourceStr,
+    int lineWidth = Constants::LINE_WIDTH,
+    bool allowLeadingSpaces = Constants::ALLOW_LEADING_SPACES,
+    bool allowTrailingSpaces = Constants::ALLOW_TRAILING_SPACES
+);
+
+
+inline std::string 
+tagString(
+    const std::string &tag, const std::string &str,
+    char tagOpenChar, char tagCloseChar
+) {
+    return tagOpenChar + tag + tagCloseChar + ' ' + str;
+}
 
 
 inline std::string 
@@ -72,11 +82,22 @@ alignRightLine(const std::string &str, const Config &config)
 
 
 inline std::string 
-textWrapChars(const std::string &sourceString, const Config &config)
+textWrapChars(const std::string &sourceStr, const Config &config)
 {
     return textWrapChars(
-        sourceString, config.lineWidth,
-        config.allowLeadingSpaces, config.allowTrailingSpaces);
+        sourceStr, config.lineWidth,
+        config.allowLeadingSpaces, config.allowTrailingSpaces
+    );
+}
+
+
+inline std::string
+textWrap(const std::string &sourceStr, const Config &config)
+{
+    return textWrap(
+        sourceStr, config.lineWidth,
+        config.allowLeadingSpaces, config.allowTrailingSpaces
+    );
 }
 
 

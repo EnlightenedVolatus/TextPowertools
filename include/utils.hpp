@@ -7,11 +7,16 @@
 namespace TextPowertools {
 
 
+using strSize = std::string::size_type;
+
+
 bool isWord(const std::string &sourceString);
 
 bool isWordExtended(const std::string &sourceString);
 
 bool isNumber(const std::string &sourceString);
+
+strSize getWordEnd(const std::string &sourceString, strSize startIndex);
 
 
 inline bool 
