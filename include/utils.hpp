@@ -15,7 +15,7 @@ bool isWordExtended(const std::string &sourceStr);
 
 bool isNumber(const std::string &sourceStr);
 
-strSize getWordEnd(const std::string &sourceStr, strSize startIndex);
+str_size getWordEnd(const std::string &sourceStr, str_size startIndex);
 
 
 inline bool 

@@ -7,7 +7,7 @@
 namespace TextPowertools {
 
 
-using strSize = std::string::size_type;
+using str_size = std::string::size_type;
 
 
 }  // namespace TextPowertools

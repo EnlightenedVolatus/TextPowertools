@@ -45,11 +45,11 @@ isNumber(const std::string &sourceStr)
 }
 
 
-strSize
-getWordEnd(const std::string &sourceStr, strSize startIndex)
+str_size
+getWordEnd(const std::string &sourceStr, str_size startIndex)
 {
-    strSize endIndex {startIndex};
-    for (strSize i {startIndex + 1}; i < sourceStr.length(); i++)
+    str_size endIndex {startIndex};
+    for (str_size i {startIndex + 1}; i < sourceStr.length(); i++)
     {
         if (!isAlphabetic(sourceStr[i])) break;
         endIndex++;

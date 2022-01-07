@@ -12,7 +12,7 @@ namespace TextPowertools {
 
 
 std::string 
-alignLeftLine(std::string str, unsigned int lineWidth)
+alignLeftLine(std::string str, str_size lineWidth)
 {
     if (lineWidth > str.length())
         str.insert(str.length(), lineWidth - str.length(), ' ');
@@ -22,11 +22,11 @@ alignLeftLine(std::string str, unsigned int lineWidth)
 
 
 std::string 
-alignCenterLine(std::string str, unsigned int lineWidth)
+alignCenterLine(std::string str, str_size lineWidth)
 {
     if (lineWidth > str.length())
     {
-        strSize paddingAmount {(lineWidth - str.length()) / 2};
+        str_size paddingAmount {(lineWidth - str.length()) / 2};
         str.insert(0, paddingAmount, ' ');
         str.insert(str.length(), paddingAmount, ' ');
     }
@@ -36,7 +36,7 @@ alignCenterLine(std::string str, unsigned int lineWidth)
 
 
 std::string 
-alignRightLine(std::string str, unsigned int lineWidth)
+alignRightLine(std::string str, str_size lineWidth)
 {
     if (lineWidth > str.length()) str.insert(0, lineWidth - str.length(), ' ');
 
@@ -47,7 +47,7 @@ alignRightLine(std::string str, unsigned int lineWidth)
 void
 wrapInsertChar(
     std::string &str, char character,
-    unsigned int &currentLineLength, unsigned int lineWidth,
+    str_size &currentLineLength, str_size lineWidth,
     bool allowLeadingSpaces, bool allowTrailingSpaces
 ) {
     if (currentLineLength == lineWidth || character == '\n')
@@ -84,7 +84,7 @@ wrapInsertChar(
 void
 wrapInsertWord(
     std::string &str, const std::string &word,
-    unsigned int &currentLineLength, unsigned int lineWidth,
+    str_size &currentLineLength, str_size lineWidth,
     bool allowTrailingSpaces
 ) {
     if (currentLineLength + word.length() > lineWidth)
@@ -104,13 +104,14 @@ wrapInsertWord(
 
 std::string 
 textWrapChars(
-    const std::string &sourceStr, unsigned int lineWidth,
+    const std::string &sourceStr, str_size lineWidth,
     bool allowLeadingSpaces, bool allowTrailingSpaces
 ) {
     std::string wrappedString;
 
-    unsigned int currentLineLength {0};
-    for (char character : sourceStr) {
+    str_size currentLineLength {0};
+    for (char character : sourceStr)
+    {
         wrapInsertChar(
             wrappedString, character,
             currentLineLength, lineWidth,
@@ -124,17 +125,17 @@ textWrapChars(
 
 std::string
 textWrap(
-    const std::string &sourceStr, unsigned int lineWidth,
+    const std::string &sourceStr, str_size lineWidth,
     bool allowLeadingSpaces, bool allowTrailingSpaces
 ) {
     std::string wrappedString;
 
-    unsigned int currentLineLength {0};
-    for (strSize i {0}; i < sourceStr.length(); i++)
+    str_size currentLineLength {0};
+    for (str_size i {0}; i < sourceStr.length(); i++)
     {
         if (isAlphabetic(sourceStr[i]))
         {
-            strSize wordEndPos {getWordEnd(sourceStr, i)};
+            str_size wordEndPos {getWordEnd(sourceStr, i)};
 
             wrapInsertWord(
                 wrappedString,
