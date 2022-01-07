@@ -3,14 +3,17 @@
 #include <cctype>
 #include <string>
 
+#include "shortcuts.hpp"
+
 
 namespace TextPowertools {
 
 
 bool 
-isWord(const std::string &sourceString)
+isWord(const std::string &sourceStr)
 {
-    for (char character : sourceString) {
+    for (char character : sourceStr)
+    {
         if (!isAlphabetic(character)) return false;
     }
 
@@ -19,9 +22,10 @@ isWord(const std::string &sourceString)
 
 
 bool 
-isWordExtended(const std::string &sourceString)
+isWordExtended(const std::string &sourceStr)
 {
-    for (char character : sourceString) {
+    for (char character : sourceStr)
+    {
         if (!isGraphical(character)) return false;
     }
 
@@ -30,9 +34,10 @@ isWordExtended(const std::string &sourceString)
 
 
 bool 
-isNumber(const std::string &sourceString)
+isNumber(const std::string &sourceStr)
 {
-    for (char character : sourceString) {
+    for (char character : sourceStr)
+    {
         if (!isDigit(character)) return false;
     }
 
@@ -41,13 +46,19 @@ isNumber(const std::string &sourceString)
 
 
 strSize
-getWordEnd(const std::string &sourceString, strSize startIndex)
+getWordEnd(const std::string &sourceStr, strSize startIndex)
 {
     strSize endIndex {startIndex};
-    for (strSize i {startIndex}; i < sourceString.size(); i++) {
-        if (!isAlphabetic(sourceString[i])) break;
+    for (strSize i {startIndex + 1}; i < sourceStr.length(); i++)
+    {
+        if (!isAlphabetic(sourceStr[i])) break;
         endIndex++;
     }
+
+    if (
+        endIndex < sourceStr.length() - 1
+        && isPunctuation(sourceStr[endIndex + 1])
+    ) endIndex++;
 
     return endIndex;
 }

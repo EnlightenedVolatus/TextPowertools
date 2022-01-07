@@ -3,20 +3,19 @@
 
 #include <string>
 
+#include "shortcuts.hpp"
+
 
 namespace TextPowertools {
 
 
-using strSize = std::string::size_type;
+bool isWord(const std::string &sourceStr);
 
+bool isWordExtended(const std::string &sourceStr);
 
-bool isWord(const std::string &sourceString);
+bool isNumber(const std::string &sourceStr);
 
-bool isWordExtended(const std::string &sourceString);
-
-bool isNumber(const std::string &sourceString);
-
-strSize getWordEnd(const std::string &sourceString, strSize startIndex);
+strSize getWordEnd(const std::string &sourceStr, strSize startIndex);
 
 
 inline bool 

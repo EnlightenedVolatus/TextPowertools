@@ -11,25 +11,25 @@ namespace TextPowertools {
 
 std::string alignLeftLine(
     std::string str,
-    int lineWidth = Constants::LINE_WIDTH
+    unsigned int lineWidth = Constants::LINE_WIDTH
 );
 
 
 std::string alignCenterLine(
     std::string str,
-    int lineWidth = Constants::LINE_WIDTH
+    unsigned int lineWidth = Constants::LINE_WIDTH
 );
 
 
 std::string alignRightLine(
     std::string str,
-    int lineWidth = Constants::LINE_WIDTH
+    unsigned int lineWidth = Constants::LINE_WIDTH
 );
 
 
 std::string textWrapChars(
     const std::string &sourceStr,
-    int lineWidth = Constants::LINE_WIDTH,
+    unsigned int lineWidth = Constants::LINE_WIDTH,
     bool allowLeadingSpaces = Constants::ALLOW_LEADING_SPACES,
     bool allowTrailingSpaces = Constants::ALLOW_TRAILING_SPACES
 );
@@ -38,7 +38,7 @@ std::string textWrapChars(
 std::string
 textWrap(
     const std::string &sourceStr,
-    int lineWidth = Constants::LINE_WIDTH,
+    unsigned int lineWidth = Constants::LINE_WIDTH,
     bool allowLeadingSpaces = Constants::ALLOW_LEADING_SPACES,
     bool allowTrailingSpaces = Constants::ALLOW_TRAILING_SPACES
 );
