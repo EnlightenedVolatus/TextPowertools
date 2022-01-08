@@ -1,5 +1,5 @@
-#ifndef PROTOVIS_ALIASES_HPP_
-#define PROTOVIS_ALIASES_HPP_
+#ifndef TEXTPOWERTOOLS_ALIASES_HPP_
+#define TEXTPOWERTOOLS_ALIASES_HPP_
 
 #include <string>
 
@@ -12,4 +12,4 @@ using str_size = std::string::size_type;
 
 }  // namespace TextPowertools
 
-#endif
+#endif  // TEXTPOWERTOOLS_ALIASES_HPP_

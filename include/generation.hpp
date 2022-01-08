@@ -1,5 +1,5 @@
-#ifndef HEADER_TEXTPOWERTOOLS_GENERATION_
-#define HEADER_TEXTPOWERTOOLS_GENERATION_
+#ifndef TEXTPOWERTOOLS_GENERATION_HPP_
+#define TEXTPOWERTOOLS_GENERATION_HPP_
 
 #include <string>
 
@@ -24,4 +24,4 @@ generateRuler(const Config &config)
 
 }  // namespace TextPowertools
 
-#endif
+#endif  // TEXTPOWERTOOLS_GENERATION_HPP_

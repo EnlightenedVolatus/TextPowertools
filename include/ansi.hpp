@@ -1,5 +1,5 @@
-#ifndef HEADER_TEXTPOWERTOOLS_ANSI_
-#define HEADER_TEXTPOWERTOOLS_ANSI_
+#ifndef TEXTPOWERTOOLS_ANSI_HPP_
+#define TEXTPOWERTOOLS_ANSI_HPP_
 
 #include <iostream>
 
@@ -248,4 +248,4 @@ ansiReset()
 
 }  // namespace TextPowertools
 
-#endif
+#endif  // TEXTPOWERTOOLS_ANSI_HPP_

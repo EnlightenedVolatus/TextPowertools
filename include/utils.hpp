@@ -1,5 +1,5 @@
-#ifndef HEADER_TEXTPOWERTOOLS_UTILS_
-#define HEADER_TEXTPOWERTOOLS_UTILS_
+#ifndef TEXTPOWERTOOLS_UTILS_HPP_
+#define TEXTPOWERTOOLS_UTILS_HPP_
 
 #include <string>
 
@@ -55,4 +55,4 @@ isGraphical(char character)
 
 }  // namespace TextPowertools
 
-#endif
+#endif  // TEXTPOWERTOOLS_UTILS_HPP_

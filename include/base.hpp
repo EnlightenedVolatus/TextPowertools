@@ -1,5 +1,5 @@
-#ifndef HEADER_TEXTPOWERTOOLS_BASE_
-#define HEADER_TEXTPOWERTOOLS_BASE_
+#ifndef TEXTPOWERTOOLS_BASE_HPP_
+#define TEXTPOWERTOOLS_BASE_HPP_
 
 #include "ansi.hpp"
 
@@ -35,4 +35,4 @@ struct Config {
 
 }  // namespace TextPowertools
 
-#endif
+#endif  // TEXTPOWERTOOLS_BASE_HPP_

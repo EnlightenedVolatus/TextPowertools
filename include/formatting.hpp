@@ -1,5 +1,5 @@
-#ifndef HEADER_TEXTPOWERTOOLS_FORMATTING_
-#define HEADER_TEXTPOWERTOOLS_FORMATTING_
+#ifndef TEXTPOWERTOOLS_FORMATTING_HPP_
+#define TEXTPOWERTOOLS_FORMATTING_HPP_
 
 #include <string>
 
@@ -104,4 +104,4 @@ textWrap(const std::string &sourceStr, const Config &config)
 
 }  // namespace TextPowertools
 
-#endif
+#endif  // TEXTPOWERTOOLS_FORMATTING_HPP_
