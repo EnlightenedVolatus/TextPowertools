@@ -4,7 +4,7 @@
 #include <string>
 
 #include "base.hpp"
-#include "shortcuts.hpp"
+#include "aliases.hpp"
 
 
 namespace TextPowertools {

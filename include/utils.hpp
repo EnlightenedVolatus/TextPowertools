@@ -3,7 +3,7 @@
 
 #include <string>
 
-#include "shortcuts.hpp"
+#include "aliases.hpp"
 
 
 namespace TextPowertools {

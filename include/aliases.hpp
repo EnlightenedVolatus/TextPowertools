@@ -1,5 +1,5 @@
-#ifndef PROTOVIS_SHORTCUTS_HPP_
-#define PROTOVIS_SHORTCUTS_HPP_
+#ifndef PROTOVIS_ALIASES_HPP_
+#define PROTOVIS_ALIASES_HPP_
 
 #include <string>
 
