@@ -3,7 +3,7 @@
 
 #include <string>
 
-#include "base.hpp"
+#include "textpowertools/base.hpp"
 
 
 namespace TextPowertools {

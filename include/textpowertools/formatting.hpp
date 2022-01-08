@@ -3,8 +3,8 @@
 
 #include <string>
 
-#include "base.hpp"
-#include "aliases.hpp"
+#include "textpowertools/base.hpp"
+#include "textpowertools/aliases.hpp"
 
 
 namespace TextPowertools {

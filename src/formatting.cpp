@@ -1,11 +1,11 @@
-#include "formatting.hpp"
+#include "textpowertools/formatting.hpp"
 
 #include <algorithm>
 #include <string>
 
-#include "base.hpp"
-#include "aliases.hpp"
-#include "utils.hpp"
+#include "textpowertools/base.hpp"
+#include "textpowertools/aliases.hpp"
+#include "textpowertools/utils.hpp"
 
 
 namespace TextPowertools {

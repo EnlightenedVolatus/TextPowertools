@@ -1,8 +1,8 @@
-#include "generation.hpp"
+#include "textpowertools/generation.hpp"
 
 #include <string>
 
-#include "base.hpp"
+#include "textpowertools/base.hpp"
 
 
 namespace TextPowertools {

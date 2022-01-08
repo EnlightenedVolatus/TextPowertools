@@ -1,9 +1,9 @@
-#include "utils.hpp"
+#include "textpowertools/utils.hpp"
 
 #include <cctype>
 #include <string>
 
-#include "aliases.hpp"
+#include "textpowertools/aliases.hpp"
 
 
 namespace TextPowertools {

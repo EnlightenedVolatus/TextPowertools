@@ -1,7 +1,7 @@
 #ifndef TEXTPOWERTOOLS_BASE_HPP_
 #define TEXTPOWERTOOLS_BASE_HPP_
 
-#include "ansi.hpp"
+#include "textpowertools/ansi.hpp"
 
 
 namespace TextPowertools {
