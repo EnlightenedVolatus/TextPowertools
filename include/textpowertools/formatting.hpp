@@ -49,7 +49,7 @@ inline std::string
 tagString(
     const std::string &tag, const std::string &str,
     char tagOpenChar, char tagCloseChar
-) {
+){
     return tagOpenChar + tag + tagCloseChar + ' ' + str;
 }
 

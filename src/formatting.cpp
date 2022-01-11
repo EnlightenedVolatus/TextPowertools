@@ -15,7 +15,9 @@ std::string
 alignLeftLine(std::string str, str_size lineWidth)
 {
     if (lineWidth > str.length())
+    {
         str.insert(str.length(), lineWidth - str.length(), ' ');
+    }
 
     return str;
 }
@@ -38,7 +40,10 @@ alignCenterLine(std::string str, str_size lineWidth)
 std::string 
 alignRightLine(std::string str, str_size lineWidth)
 {
-    if (lineWidth > str.length()) str.insert(0, lineWidth - str.length(), ' ');
+    if (lineWidth > str.length())
+    {
+        str.insert(0, lineWidth - str.length(), ' ');
+    }
 
     return str;
 }
